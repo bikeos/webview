@@ -55,4 +55,16 @@ function run() {
 			zoom: 14,
 		})
 	})
+
+	map.addControl(
+		new ol.control.MousePosition({
+			separator: ' | ',
+			numDigits: 2,
+			coordinateFormat: ol.coordinate.createStringXY(4),
+			projection: 'EPSG:4326',
+			undefinedHTML: 'Mouse is not over map.',
+			className: 'custom-mouse-position',
+			target: document.getElementById('coords'),
+		})
+	);
 }
